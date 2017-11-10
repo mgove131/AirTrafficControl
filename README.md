@@ -33,6 +33,8 @@ Run `AirTrafficControl.exe` to open the UI.
 * [Queue](AirTrafficControl/ATC/Queue)
   * The [IAtcQueue](AirTrafficControl/ATC/Queue/IAtcQueue.cs) interface allows different backing logic to be used for the queues.
   * [AtcQueueLinq](AirTrafficControl/ATC/Queue/AtcQueueLinq.cs)
-    * The current implementation available.
     * It uses a list to hold the queued aircrafts. 
 	* It searches with the list with Linq statements to dequeue the correct aircraft.
+  * [AtcQueueBuckets](AirTrafficControl/ATC/Queue/AtcQueueBuckets.cs)
+    * Stores the aircraft in different queues based on the type and size. 
+	* Dequeuing is more efficient because it just has to see if a queue has any aircraft, not search it.

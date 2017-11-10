@@ -16,7 +16,7 @@ namespace AirTrafficControl.ViewModel.ATC
         /// </summary>
         public AirTrafficController()
         {
-            this.Queue = new AtcQueueLinq();
+            this.Queue = new AtcQueueBuckets();
             this.IsRunning = false;
         }
 

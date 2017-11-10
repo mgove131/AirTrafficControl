@@ -20,7 +20,7 @@ namespace AirTrafficControl.ATC.Queue
 
         public Aircraft Dequeue()
         {
-            Aircraft aircraft;
+            Aircraft aircraft = null;
 
             aircraft = queue.FirstOrDefault((a) => (a.Type == AcType.Passenger) && (a.Size == AcSize.Large));
 

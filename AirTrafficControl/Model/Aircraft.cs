@@ -28,16 +28,6 @@
         }
 
         /// <summary>
-        /// Aircraft type.
-        /// </summary>
-        public enum AcType { Passenger, Cargo };
-
-        /// <summary>
-        /// Aircraft size.
-        /// </summary>
-        public enum AcSize { Small, Large };
-
-        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="type">Aircraft type</param>
@@ -54,5 +44,10 @@
         public AcType Type { get; private set; }
 
         public AcSize Size { get; private set; }
+
+        public override string ToString()
+        {
+            return string.Format("Aircraft [ Id={0}, Type={1}, Size={2} ]", Id, Type, Size);
+        }
     }
 }

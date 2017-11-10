@@ -10,7 +10,8 @@
         /// </summary>
         public RequestDequeue()
         {
-
         }
+
+        public Aircraft Aircraft { get; set; }
     }
 }

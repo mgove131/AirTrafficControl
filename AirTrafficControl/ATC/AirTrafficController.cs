@@ -1,6 +1,8 @@
 ﻿using AirTrafficControl.ATC;
+using AirTrafficControl.ATC.Queues;
+using AirTrafficControl.Model;
 using AirTrafficControl.Model.Request;
-using System;
+using System.Collections.Generic;
 
 namespace AirTrafficControl.ViewModel.ATC
 {
@@ -14,27 +16,52 @@ namespace AirTrafficControl.ViewModel.ATC
         /// </summary>
         public AirTrafficController()
         {
-
+            this.Queue = new AtcQueueLinq();
+            this.IsRunning = false;
         }
 
-        private void process(RequestDequeue req)
+        private IAtcQueue Queue { get; set; }
+
+        public bool IsRunning { get; private set; }
+
+        private void EnsureStopped()
         {
-            Console.WriteLine("RequestDequeue");
+            if (IsRunning)
+            {
+                throw new AirTrafficControlException("Request failed. AirTrafficController should be stopped.");
+            }
         }
 
-        private void process(RequestEnqueue req)
+        private void EnsureStarted()
         {
-            Console.WriteLine("RequestEnqueue");
+            if (!IsRunning)
+            {
+                throw new AirTrafficControlException("Request failed. AirTrafficController should be started.");
+            }
         }
 
-        private void process(RequestStart req)
+        private void Process(RequestDequeue req)
         {
-            Console.WriteLine("RequestStart");
+            EnsureStarted();
+            req.Aircraft = Queue.Dequeue();
         }
 
-        private void process(RequestStop req)
+        private void Process(RequestEnqueue req)
         {
-            Console.WriteLine("RequestStop");
+            EnsureStarted();
+            Queue.Enqueue(req.Aircraft);
+        }
+
+        private void Process(RequestStart req)
+        {
+            EnsureStopped();
+            IsRunning = true;
+        }
+
+        private void Process(RequestStop req)
+        {
+            EnsureStarted();
+            IsRunning = false;
         }
 
         /// <summary>
@@ -45,24 +72,33 @@ namespace AirTrafficControl.ViewModel.ATC
         {
             if (req is RequestDequeue)
             {
-                process((RequestDequeue)req);
+                Process((RequestDequeue)req);
             }
             else if (req is RequestEnqueue)
             {
-                process((RequestEnqueue)req);
+                Process((RequestEnqueue)req);
             }
             else if (req is RequestStart)
             {
-                process((RequestStart)req);
+                Process((RequestStart)req);
             }
             else if (req is RequestStop)
             {
-                process((RequestStop)req);
+                Process((RequestStop)req);
             }
             else
             {
                 throw new AirTrafficControlException("Invalid Request");
             }
+        }
+
+        /// <summary>
+        /// Returns queued aircraft.
+        /// </summary>
+        /// <returns>Queued aircraft.</returns>
+        public List<Aircraft> GetQueue()
+        {
+            return Queue.GetQueue();
         }
     }
 }

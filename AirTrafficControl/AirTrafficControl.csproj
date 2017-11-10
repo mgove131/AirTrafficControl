@@ -56,7 +56,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ATC\AirTrafficControlException.cs" />
+    <Compile Include="ATC\Queues\AtcQueueLinq.cs" />
+    <Compile Include="ATC\Queues\IAtcQueue.cs" />
+    <Compile Include="Model\AcSize.cs" />
+    <Compile Include="Model\AcType.cs" />
     <Compile Include="Model\Aircraft.cs" />
+    <Compile Include="Model\ObservableCollectionFast.cs" />
     <Compile Include="Model\Request\Request.cs" />
     <Compile Include="Model\Request\RequestDequeue.cs" />
     <Compile Include="Model\Request\RequestEnqueue.cs" />

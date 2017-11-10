@@ -8,9 +8,12 @@
         /// <summary>
         /// Constructor.
         /// </summary>
-        public RequestEnqueue()
+        /// <param name="a">Aircraft to enqueu</param>
+        public RequestEnqueue(Aircraft a)
         {
-
+            this.Aircraft = a;
         }
+
+        public Aircraft Aircraft { get; private set; }
     }
 }

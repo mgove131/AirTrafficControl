@@ -6,10 +6,10 @@
 * Aircraft can be enqueued and dequeued.
 * Aircraft have a type and size.
 * Dequeue order
-** Large passenger aircraft
-** Small passenger aircraft
-** Large cargo aircraft
-** Small cargo aircraft
+  * Large passenger aircraft
+  * Small passenger aircraft
+  * Large cargo aircraft
+  * Small cargo aircraft
 
 ## Instructions
 

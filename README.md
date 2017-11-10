@@ -23,4 +23,5 @@ Run `AirTrafficControl.exe` to open the UI.
   * The [IAtcQueue](AirTrafficControl/ATC/Queue/IAtcQueue.cs) interface allows different backing logic to be used for the queues.
   * [AtcQueueLinq](AirTrafficControl/ATC/Queue/AtcQueueLinq.cs)
     * The current implementation available.
-    * It uses a list to queue and searches with Linq statements to dequeue.
+    * It uses a list to hold the queued aircrafts. 
+	* It searches with the list with Linq statements to dequeue the correct aircraft.

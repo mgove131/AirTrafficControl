@@ -1,5 +1,16 @@
 # AirTrafficControl
 
+## Description
+
+* Air-traffic control system that manage a queue of aircraft in an airport.
+* Aircraft can be enqueued and dequeued.
+* Aircraft have a type and size.
+* Dequeue order
+** Large passenger aircraft
+** Small passenger aircraft
+** Large cargo aircraft
+** Small cargo aircraft
+
 ## Instructions
 
 Run `AirTrafficControl.exe` to open the UI.

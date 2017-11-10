@@ -2,7 +2,7 @@
 
 ## Description
 
-* Air-traffic control system that manage a queue of aircraft in an airport.
+* Air-traffic control system that manages a queue of aircraft in an airport.
 * Aircraft can be enqueued and dequeued.
 * Aircraft have a type and size.
 * Dequeue order

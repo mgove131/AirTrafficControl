@@ -6,4 +6,4 @@ Run `AirTrafficControl.exe` to open the UI.
 
 ## Design
 
-[test](AirTrafficControl/AirTrafficControl/Model/Aircraft.cs)
+[test](AirTrafficControl/Model/Aircraft.cs)

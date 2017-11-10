@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AirTrafficControl.ATC.Queues
+namespace AirTrafficControl.ATC.Queue
 {
     /// <summary>
     /// Usues Linq to dequeue planes.

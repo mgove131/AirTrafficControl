@@ -1,7 +1,7 @@
 ﻿using AirTrafficControl.Model;
 using System.Collections.Generic;
 
-namespace AirTrafficControl.ATC.Queues
+namespace AirTrafficControl.ATC.Queue
 {
     /// <summary>
     /// Supports queuing and dequeueing aircraft.

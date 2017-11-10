@@ -1,5 +1,5 @@
 ﻿using AirTrafficControl.ATC;
-using AirTrafficControl.ATC.Queues;
+using AirTrafficControl.ATC.Queue;
 using AirTrafficControl.Model;
 using AirTrafficControl.Model.Request;
 using System.Collections.Generic;

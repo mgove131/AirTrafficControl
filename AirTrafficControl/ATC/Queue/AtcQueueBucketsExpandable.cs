@@ -67,7 +67,7 @@ namespace AirTrafficControl.ATC.Queue
 
             if (queue == null)
             {
-                throw new AirTrafficControlException(string.Format("AtcQueueBuckets: Aircraft has invalid properties. Cannot Enqueue. {0}", a));
+                throw new AirTrafficControlException(string.Format("AtcQueueBucketsExpandable: Aircraft has invalid properties. Cannot Enqueue. {0}", a));
             }
             else
             {

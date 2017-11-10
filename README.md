@@ -38,3 +38,6 @@ Run `AirTrafficControl.exe` to open the UI.
   * [AtcQueueBuckets](AirTrafficControl/ATC/Queue/AtcQueueBuckets.cs)
     * Stores the aircraft in different queues based on the type and size. 
 	* Dequeuing is more efficient because it just has to see if a queue has any aircraft, not search it.
+  * [AtcQueueBucketsExpandable](AirTrafficControl/ATC/Queue/AtcQueueBucketsExpandable.cs)
+    * Similar to AtcQueueBuckets. 
+	* Uses a List of Queues so adding new buckets is easier.

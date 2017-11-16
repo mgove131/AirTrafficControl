@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="ATC\AirTrafficControlException.cs" />
     <Compile Include="ATC\Queue\AtcQueueBuckets.cs" />
+    <Compile Include="ATC\Queue\AtcQueueBucketsArrays.cs" />
     <Compile Include="ATC\Queue\AtcQueueBucketsExpandable.cs" />
     <Compile Include="ATC\Queue\AtcQueueLinq.cs" />
     <Compile Include="ATC\Queue\IAtcQueue.cs" />
